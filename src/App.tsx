@@ -7,6 +7,7 @@ interface Activity {
   activityPositions: any;
   activityName: string;
   activityElevation: number;
+  activityDate: string;
 }
 
 function App() {
@@ -40,16 +41,19 @@ function App() {
       let page = 1;
       while (true) {
         const stravaActivities = await fetchActivities(page);
+        // console.log(stravaActivities)
         if (stravaActivities.length > 0) {
           for (const stravaActivity of stravaActivities) {
             const activity_polyline = stravaActivity.map.summary_polyline;
             const activity_name = stravaActivity.name;
             const activity_elevation = stravaActivity.total_elevation_gain;
+            const activity_date = stravaActivity.start_date;
             const decodedPolyline = polyline.decode(activity_polyline);
             allActivities.push({
               activityPositions: decodedPolyline,
               activityName: activity_name,
               activityElevation: activity_elevation,
+              activityDate: activity_date
             });
           }
           page++;
@@ -57,7 +61,7 @@ function App() {
           break;
         }
       }
-      console.log(allActivities)
+      // console.log(allActivities)
       setActivities(allActivities);
       setLoading(false)
       } catch (error) {
@@ -85,7 +89,7 @@ function App() {
             <Popup>
               <div>
                 <h2>{activity.activityName}</h2>
-                <p>{activity.activityElevation}</p>
+                <p>{activity.activityDate}</p>
               </div>
             </Popup>
           </Polyline>
