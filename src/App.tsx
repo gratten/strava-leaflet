@@ -75,19 +75,20 @@ function App() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-      <MapContainer center={[42.585444, 13.257684]} zoom={6} scrollWheelZoom={true}>
+      // <MapContainer center={[42.585444, 13.257684]} zoom={6} scrollWheelZoom={true}>
+      <MapContainer center={[42.585444, 13.257684]} zoom={6} scrollWheelZoom={true} style={{ width: '100%', height: '100vh' }}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {activities.map((activity, i) => (
           <Polyline key={i} positions={activity.activityPositions}>
-            {/* <Popup>
+            <Popup>
               <div>
                 <h2>{activity.activityName}</h2>
                 <p>{activity.activityElevation}</p>
               </div>
-            </Popup> */}
+            </Popup>
           </Polyline>
         ))}
       </MapContainer>
