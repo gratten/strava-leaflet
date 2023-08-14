@@ -13,9 +13,9 @@ interface Activity {
 function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
 
-  const clientID = "111871";
-  const clientSecret = "918212e247c6fa5ca06f8b25accf5a53e6cf85bd";
-  const refreshToken = "e1bd165a4f84d4b5af701935c813daa2ee4ca0a6";
+  const clientID = process.env.REACT_APP_CLIENT_ID;
+  const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+  const refreshToken = process.env.REACT_APP_REFRESH_TOKEN;
   const auth_link = "https://www.strava.com/oauth/token";
   const activities_link = `https://www.strava.com/api/v3/athlete/activities`;
 
