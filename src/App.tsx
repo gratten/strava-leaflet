@@ -75,8 +75,7 @@ function App() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-      // <MapContainer center={[42.585444, 13.257684]} zoom={6} scrollWheelZoom={true}>
-      <MapContainer center={[42.585444, 13.257684]} zoom={6} scrollWheelZoom={true} style={{ width: '100%', height: '100vh' }}>
+      <MapContainer center={[33.77196, -84.38370]} zoom={12} scrollWheelZoom={true} style={{ width: '100%', height: '100vh' }}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
