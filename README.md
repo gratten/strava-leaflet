@@ -13,14 +13,14 @@ Steps for Strava API
 
 1) get client id and client secret from strava.com. Log in and view your application. Need to have an app first. 
 
-client id = 111871
-client secret = 918212e247c6fa5ca06f8b25accf5a53e6cf85bd
+client id = 
+client secret = 
 
 2) get authorization code ==> this is a one time step
 
 https://www.strava.com/oauth/authorize?client_id=111871&redirect_uri=http://localhost&response_type=code&scope=activity:read_all
 
-auth code = 77406112afdf36b9cbfa7344995b531b5497c97a
+auth code = 
 
 3) Exchange authorization code for access token & refresh token with read_all ability
 use postman for this one, be sure it is set to post and not get, be sure to remove the new line after pasting it into postman
